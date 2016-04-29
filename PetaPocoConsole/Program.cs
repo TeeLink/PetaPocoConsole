@@ -54,7 +54,8 @@ namespace PetaPocoConsole
             //    Console.WriteLine($"{0} - {2}", s.Name, s.Amount);
             //}
 
-            //Console.ReadLine();
+
+            Console.ReadLine();
         }
     }
 }
