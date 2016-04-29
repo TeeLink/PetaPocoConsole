@@ -53,6 +53,25 @@ namespace PetaPocoConsole
             //{
             //    Console.WriteLine($"{0} - {2}", s.Name, s.Amount);
             //}
+            foreach (var sale in db.Query<SalesPerson>("select * from SalesPerson"))
+            {
+                Console.WriteLine($"Sales Person: {sale.Name}");
+            }
+
+            foreach (var sale in db.Query<SalesMade>("select * from SalesMade"))
+            {
+                Console.WriteLine($"{sale.Name} made a sale on {sale.Date.ToShortDateString()} for ${sale.Amount}");
+            }
+
+            foreach (var salelow in db.Query<SalesMade>("Select min(PreTaxAmount) SalesMade"))
+            {
+                Console.WriteLine(salelow.Amount);
+            }
+
+            foreach (var salehigh in db.Query<SalesMade>("Select min(PreTaxAmount) SalesMade"))
+            {
+                Console.WriteLine(salehigh.Amount);
+            }
 
 
             Console.ReadLine();
